@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Semangat Skripsi 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #ffd6e8, #c7ceea);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      width: 380px;
+      border-radius: 18px;
+      box-shadow: 0 15px 30px rgba(0,0,0,.15);
+      text-align: center;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    #msg {
+      font-size: 18px;
+      margin: 20px 0;
+      min-height: 60px;
+    }
+
+    button {
+      background: #ff7aa2;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 6px;
+      font-size: 14px;
+      transition: transform .1s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #ff5c8a;
+    }
+
+    .panic {
+      background: #222;
+      color: #fff;
+    }
+
+    .panic button {
+      background: #ffcc00;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card" id="card">
+  <h1>TEKAN AJA JANGAN RAGU</h1>
+  <p id="msg">Klik tombol kalau mulai overthinking 😵‍💫</p>
+
+  <button onclick="semangat()">Butuh Semangat 💕</button>
+  <button onclick="panic()">Mode Panik 😭</button>
+</div>
+
+<script>
+  const semangatList = [
+    "Semangat Skripsinnya 🤗",
+    "Revisi itu tanda dosen peduli (katanya) 😌",
+    "Satu paragraf dulu, nangis belakangan 🫶",
+    "Kalau Capek Cari aku aja Aku selalu ada untuk kamu kok",
+    "Ingat: wisuda > Main roblox sepuasnnnya 📚🎓"
+  ];
+
+  const panicList = [
+    "Jangan Malas",
+    "Ingat aja waktu dosen coret coret Skripsimu",
+    "DEADLINE BOLEH KEJAR, KAMU JANGAN PINGSAN 🫠",
+    "Nanti gak bisa main roblox lagi"
+  ];
+
+  function semangat() {
+    reset();
+    const i = Math.floor(Math.random() * semangatList.length);
+    document.getElementById("msg").innerText = semangatList[i];
+  }
+
+  function panic() {
+    const card = document.getElementById("card");
+    card.classList.add("panic");
+    let i = Math.floor(Math.random() * panicList.length);
+    document.getElementById("msg").innerText = panicList[i];
+  }
+
+  function reset() {
+    document.getElementById("card").classList.remove("panic");
+  }
+</script>
+
+</body>
+</html>
